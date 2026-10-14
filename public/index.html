@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Portal pengumpulan tugas lewat satu QR untuk banyak guru.">
+<title>Titip Tugas — Pengumpulan Tugas</title><link rel="stylesheet" href="/style.css">
+</head>
+<body><main class="shell">
+<header class="brand"><div class="brand-mark">TT</div><div><strong>Titip Tugas</strong><span>Pengumpulan tugas via satu QR</span></div></header>
+<section class="hero"><div class="eyebrow">VIDEO PEMBELAJARAN TERINTEGRASI AR</div><h1>Kumpulkan jawabanmu dengan mudah.</h1><p>Masukkan kode guru, lengkapi identitas, lalu unggah foto atau PDF penyelesaian soalmu.</p><div class="pills"><span>PDF</span><span>JPG / PNG</span><span>Maks. 15 MB</span></div></section>
+<section class="panel"><h2>Formulir pengumpulan tugas</h2>
+<form id="submission-form">
+<label for="teacherCode">Kode guru</label><input id="teacherCode" name="teacherCode" autocomplete="off" required maxlength="12" placeholder="Contoh: AB3K7MNP"><p id="teacher-check" class="helper">Masukkan kode yang diberikan oleh guru.</p>
+<label for="studentName">Nama lengkap</label><input id="studentName" name="studentName" required maxlength="100" placeholder="Nama siswa">
+<label for="className">Kelas</label><input id="className" name="className" required maxlength="80" placeholder="Contoh: XI IPA 1">
+<label for="answer">Foto atau PDF jawaban</label><input id="answer" name="answer" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp,application/pdf,image/jpeg,image/png,image/webp" required><p class="helper">Pastikan tulisan pada foto terbaca. Format PDF, JPG, PNG, atau WEBP.</p>
+<button id="submit-button" type="submit">Kirim tugas</button><div id="form-status" class="status" role="status" aria-live="polite"></div>
+</form></section>
+<section class="teacher-card"><div><h2>Guru menggunakan video ini?</h2><p>Hubungkan Google Drive untuk mendapatkan kode guru pribadi. Tugas siswa dengan kode tersebut akan masuk ke folder Drive akun guru.</p></div><a class="button secondary" href="/teacher/connect">Hubungkan Google Drive</a></section>
+<footer>Portal pengumpulan tugas • Unggah hanya berkas yang diminta guru.</footer>
+</main><script src="/app.js"></script></body></html>

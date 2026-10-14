@@ -1,0 +1,13 @@
+name = "titip-tugas"
+main = "src/worker.js"
+compatibility_date = "2026-09-15"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "titip-tugas-db"
+database_id = "PASTE_D1_DATABASE_ID_HERE"
+migrations_dir = "migrations"

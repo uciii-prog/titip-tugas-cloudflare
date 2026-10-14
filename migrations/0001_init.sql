@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS teachers (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  email TEXT NOT NULL UNIQUE,
+  code TEXT NOT NULL UNIQUE,
+  refresh_token_enc TEXT NOT NULL,
+  folder_id TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS submissions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  teacher_id INTEGER NOT NULL,
+  student_name TEXT NOT NULL,
+  class_name TEXT NOT NULL,
+  original_filename TEXT NOT NULL,
+  drive_file_id TEXT NOT NULL,
+  submitted_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (teacher_id) REFERENCES teachers(id)
+);
+
+CREATE TABLE IF NOT EXISTS oauth_states (
+  state TEXT PRIMARY KEY,
+  created_at INTEGER NOT NULL
+);
