@@ -133,6 +133,67 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
+
+    if (request.method === "GET" && path === "/privacy") {
+      return new Response(`<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kebijakan Privasi - Titip Tugas</title>
+</head>
+<body style="font-family:Arial,sans-serif;max-width:800px;margin:40px auto;padding:20px;line-height:1.7;color:#263445">
+<h1>Kebijakan Privasi Titip Tugas</h1>
+<p>Terakhir diperbarui: 15 Oktober 2026</p>
+<h2>1. Informasi yang diproses</h2>
+<p>Titip Tugas memproses informasi yang diperlukan untuk menjalankan layanan, termasuk email Google guru, nama dan kelas siswa, serta berkas tugas yang dikirimkan.</p>
+<h2>2. Google Drive</h2>
+<p>Dengan persetujuan guru, aplikasi menggunakan izin Google Drive untuk membuat folder pengumpulan dan mengunggah berkas tugas ke akun Drive guru yang terhubung.</p>
+<h2>3. Penggunaan informasi</h2>
+<p>Informasi digunakan untuk menghubungkan akun guru dan memproses pengumpulan tugas. Informasi pribadi tidak dijual.</p>
+<h2>4. Penyimpanan dan keamanan</h2>
+<p>Aplikasi menggunakan Google Drive dan infrastruktur Cloudflare untuk menjalankan layanan. Langkah pengamanan yang wajar diterapkan untuk melindungi informasi.</p>
+<h2>5. Penghapusan data</h2>
+<p>Guru dapat mengelola berkas tugas dalam Google Drive mereka. Untuk pertanyaan tentang informasi yang disimpan aplikasi, hubungi pengembang melalui kontak yang tersedia pada halaman aplikasi.</p>
+<h2>6. Layanan pihak ketiga</h2>
+<p>Penggunaan Google dan Cloudflare juga tunduk pada ketentuan dan kebijakan masing-masing penyedia.</p>
+<h2>7. Perubahan dan kontak</h2>
+<p>Kebijakan ini dapat diperbarui apabila praktik pengelolaan data berubah. Hubungi pengembang melalui email kontak yang tercantum pada halaman aplikasi.</p>
+<p><a href="/terms">Persyaratan Layanan</a></p>
+</body>
+</html>`, { headers: { "Content-Type": "text/html; charset=utf-8" } });
+    }
+
+    if (request.method === "GET" && path === "/terms") {
+      return new Response(`<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Persyaratan Layanan - Titip Tugas</title>
+</head>
+<body style="font-family:Arial,sans-serif;max-width:800px;margin:40px auto;padding:20px;line-height:1.7;color:#263445">
+<h1>Persyaratan Layanan Titip Tugas</h1>
+<p>Terakhir diperbarui: 15 Oktober 2026</p>
+<h2>1. Ketentuan umum</h2>
+<p>Titip Tugas membantu siswa mengumpulkan tugas kepada guru melalui kode guru dan Google Drive.</p>
+<h2>2. Penggunaan layanan</h2>
+<p>Pengguna harus memberikan informasi yang benar dan menggunakan layanan secara bertanggung jawab. Pengguna tidak boleh mengunggah berkas yang melanggar hukum atau hak pihak lain.</p>
+<h2>3. Tanggung jawab guru</h2>
+<p>Guru bertanggung jawab atas akun Google yang dihubungkan, keamanan kode guru, serta pengelolaan berkas dalam Google Drive miliknya.</p>
+<h2>4. Tanggung jawab siswa</h2>
+<p>Siswa bertanggung jawab atas nama, kelas, dan berkas yang dikirimkan serta perlu memastikan pengiriman berhasil. Pengiriman tidak menjamin tugas telah diperiksa atau dinilai.</p>
+<h2>5. Ketersediaan layanan</h2>
+<p>Gangguan internet, masalah teknis, atau gangguan layanan pihak ketiga dapat memengaruhi pengiriman tugas. Pengguna perlu memastikan tugas berhasil dikirim sebelum tenggat.</p>
+<h2>6. Perubahan ketentuan</h2>
+<p>Persyaratan dapat diperbarui seiring perkembangan layanan.</p>
+<h2>7. Kontak</h2>
+<p>Untuk pertanyaan mengenai layanan, hubungi pengembang melalui email kontak yang tercantum pada halaman aplikasi.</p>
+<p><a href="/privacy">Kebijakan Privasi</a></p>
+</body>
+</html>`, { headers: { "Content-Type": "text/html; charset=utf-8" } });
+    }
+
     if (request.method === "GET" && path === "/health") return json({ ok: true });
 
     if (request.method === "GET" && path === "/debug-config") {
