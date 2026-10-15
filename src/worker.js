@@ -134,6 +134,13 @@ export default {
     const path = url.pathname;
 
     if (request.method === "GET" && path === "/health") return json({ ok: true });
+if (request.method === "GET" && path === "/debug-config") {
+  return json({
+    clientId: Boolean(env.GOOGLE_CLIENT_ID),
+    clientSecret: Boolean(env.GOOGLE_CLIENT_SECRET),
+    encryptionKey: Boolean(env.TOKEN_ENCRYPTION_KEY)
+  });
+}
 
     if (request.method === "GET" && path === "/teacher/connect") {
       if (!env.GOOGLE_CLIENT_ID || !env.GOOGLE_CLIENT_SECRET || !env.TOKEN_ENCRYPTION_KEY) {
