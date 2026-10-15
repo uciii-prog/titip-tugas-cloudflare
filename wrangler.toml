@@ -8,6 +8,6 @@ binding = "ASSETS"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "titip-tugas-db"
+database_name = "titip-tugas-db-"
 database_id = "a93e2723-16dc-4066-9f6f-3b1f4486fe4b"
 migrations_dir = "migrations"
